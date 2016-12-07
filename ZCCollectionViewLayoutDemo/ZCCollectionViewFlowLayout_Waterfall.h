@@ -13,5 +13,6 @@
 @property(nonatomic, assign) CGFloat columnMargin; //列距
 @property(nonatomic, assign) CGFloat rowMargin; //行距
 @property(nonatomic, assign) NSInteger columnCount; //列数
+@property(nonatomic, assign) UIEdgeInsets edgeInsets;
 
 @end

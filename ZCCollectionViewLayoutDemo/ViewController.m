@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "ZCCollectionViewFlowLayout_Hover.h"
 #import "ZCCollectionViewCell.h"
+#import "UIColor+random.h"
+#import "ZCCollectionCircleViewController.h"
 
 @interface ViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic, strong) UICollectionView *collectionView;
@@ -41,6 +43,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)CircleItemBtnClicked:(id)sender {
+    ZCCollectionCircleViewController *circleLayoutVC = [[ZCCollectionCircleViewController alloc] init];
+    [self.navigationController pushViewController:circleLayoutVC animated:YES];
+}
 
 
 #pragma mark - UICollectionViewDataSource
@@ -60,15 +66,9 @@
     (ZCCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ZCCollectionViewCell"
                                                                       forIndexPath:indexPath];
     
-    NSInteger index = indexPath.item;
-    if (index % 2 == 0) {
-        cellView.backgroundColor = [UIColor yellowColor];
-    }
-    else {
-        cellView.backgroundColor = [UIColor greenColor];
-    }
+    cellView.backgroundColor = [UIColor random];
     
-    cellView.titel.text = [NSString stringWithFormat:@"titel: %ld",index];
+    cellView.titel.text = [NSString stringWithFormat:@"titel: %ld",indexPath.item];
     
     return cellView;
 }

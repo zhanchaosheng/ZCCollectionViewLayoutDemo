@@ -12,7 +12,6 @@
 @property(nonatomic, assign) CGFloat contentHeight; //记录布局需要的contentSize的高度
 @property(nonatomic, strong) NSMutableArray *columnHeights; //记录各列的当前布局高度
 @property(nonatomic, strong) NSMutableArray *attrsArray;
-@property(nonatomic, assign) UIEdgeInsets edgeInsets;
 @end
 
 @implementation ZCCollectionViewFlowLayout_Waterfall
@@ -62,7 +61,10 @@
     //列数是3，布局属性的宽度是固定的
     CGFloat collectionViewW = self.collectionView.frame.size.width;
     CGFloat width = (collectionViewW - self.edgeInsets.left - self.edgeInsets.right - (self.columnCount - 1) * self.columnMargin) / self.columnCount;
-    CGFloat height = 0;//通过数据源以及宽度信息，获取对应位置的布局属性高度;
+    //通过数据源以及宽度信息，获取对应位置的布局属性高度;
+    NSNumber *cellHeight = [self.collectionView.dataSource performSelector:@selector(heightForItemAtIndexPath:)
+                                                                withObject:indexPath];
+    CGFloat height = cellHeight != nil ? [cellHeight doubleValue] : width;
     //找到数组内目前高度最小的那一列
     NSInteger destColumn = 0;
     CGFloat minColumnHeight = [self.columnHeights[0] doubleValue];

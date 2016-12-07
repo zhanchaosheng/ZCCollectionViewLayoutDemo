@@ -13,6 +13,10 @@
 		1187E8521DF66EBF00F6FE0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1187E8501DF66EBF00F6FE0B /* Main.storyboard */; };
 		1187E8541DF66EBF00F6FE0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1187E8531DF66EBF00F6FE0B /* Assets.xcassets */; };
 		1187E8571DF66EBF00F6FE0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1187E8551DF66EBF00F6FE0B /* LaunchScreen.storyboard */; };
+		1195F9691DF7A90500449700 /* UIColor+random.m in Sources */ = {isa = PBXBuildFile; fileRef = 1195F9681DF7A90500449700 /* UIColor+random.m */; };
+		1195F96C1DF7F37500449700 /* ZCCollectionViewCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1195F96B1DF7F37500449700 /* ZCCollectionViewCircleLayout.m */; };
+		1195F96F1DF7F46C00449700 /* ZCCollectionViewCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1195F96E1DF7F46C00449700 /* ZCCollectionViewCircleCell.m */; };
+		1195F9721DF7F56000449700 /* ZCCollectionCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1195F9711DF7F56000449700 /* ZCCollectionCircleViewController.m */; };
 		1196C5231DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.m in Sources */ = {isa = PBXBuildFile; fileRef = 1196C5221DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.m */; };
 		1196C5261DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.m in Sources */ = {isa = PBXBuildFile; fileRef = 1196C5251DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.m */; };
 		1196C5291DF6B8F400A20531 /* ZCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1196C5281DF6B8F400A20531 /* ZCCollectionViewCell.m */; };
@@ -32,6 +36,14 @@
 		1187E8531DF66EBF00F6FE0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1187E8561DF66EBF00F6FE0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1187E8581DF66EBF00F6FE0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1195F9671DF7A90500449700 /* UIColor+random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+random.h"; sourceTree = "<group>"; };
+		1195F9681DF7A90500449700 /* UIColor+random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+random.m"; sourceTree = "<group>"; };
+		1195F96A1DF7F37500449700 /* ZCCollectionViewCircleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCollectionViewCircleLayout.h; sourceTree = "<group>"; };
+		1195F96B1DF7F37500449700 /* ZCCollectionViewCircleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCCollectionViewCircleLayout.m; sourceTree = "<group>"; };
+		1195F96D1DF7F46C00449700 /* ZCCollectionViewCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCollectionViewCircleCell.h; sourceTree = "<group>"; };
+		1195F96E1DF7F46C00449700 /* ZCCollectionViewCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCCollectionViewCircleCell.m; sourceTree = "<group>"; };
+		1195F9701DF7F56000449700 /* ZCCollectionCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCollectionCircleViewController.h; sourceTree = "<group>"; };
+		1195F9711DF7F56000449700 /* ZCCollectionCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCCollectionCircleViewController.m; sourceTree = "<group>"; };
 		1196C5211DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCollectionViewFlowLayout_Hover.h; sourceTree = "<group>"; };
 		1196C5221DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCCollectionViewFlowLayout_Hover.m; sourceTree = "<group>"; };
 		1196C5241DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCCollectionViewFlowLayout_Waterfall.h; sourceTree = "<group>"; };
@@ -84,19 +96,27 @@
 				1196C52E1DF6C08800A20531 /* leftViewController.m */,
 				1196C5301DF6C0A700A20531 /* rightViewController.h */,
 				1196C5311DF6C0A700A20531 /* rightViewController.m */,
+				1195F9701DF7F56000449700 /* ZCCollectionCircleViewController.h */,
+				1195F9711DF7F56000449700 /* ZCCollectionCircleViewController.m */,
+				1196C5211DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.h */,
+				1196C5221DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.m */,
+				1196C5241DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.h */,
+				1196C5251DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.m */,
+				1195F96A1DF7F37500449700 /* ZCCollectionViewCircleLayout.h */,
+				1195F96B1DF7F37500449700 /* ZCCollectionViewCircleLayout.m */,
+				1196C5271DF6B8F400A20531 /* ZCCollectionViewCell.h */,
+				1196C5281DF6B8F400A20531 /* ZCCollectionViewCell.m */,
+				1195F96D1DF7F46C00449700 /* ZCCollectionViewCircleCell.h */,
+				1195F96E1DF7F46C00449700 /* ZCCollectionViewCircleCell.m */,
+				1196C52A1DF6BF4F00A20531 /* ZCCollectionSectionHeaderView.h */,
+				1196C52B1DF6BF4F00A20531 /* ZCCollectionSectionHeaderView.m */,
+				1195F9671DF7A90500449700 /* UIColor+random.h */,
+				1195F9681DF7A90500449700 /* UIColor+random.m */,
 				1187E8501DF66EBF00F6FE0B /* Main.storyboard */,
 				1187E8531DF66EBF00F6FE0B /* Assets.xcassets */,
 				1187E8551DF66EBF00F6FE0B /* LaunchScreen.storyboard */,
 				1187E8581DF66EBF00F6FE0B /* Info.plist */,
 				1187E8471DF66EBF00F6FE0B /* Supporting Files */,
-				1196C5211DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.h */,
-				1196C5221DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.m */,
-				1196C5241DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.h */,
-				1196C5251DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.m */,
-				1196C5271DF6B8F400A20531 /* ZCCollectionViewCell.h */,
-				1196C5281DF6B8F400A20531 /* ZCCollectionViewCell.m */,
-				1196C52A1DF6BF4F00A20531 /* ZCCollectionSectionHeaderView.h */,
-				1196C52B1DF6BF4F00A20531 /* ZCCollectionSectionHeaderView.m */,
 			);
 			path = ZCCollectionViewLayoutDemo;
 			sourceTree = "<group>";
@@ -180,9 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1195F9691DF7A90500449700 /* UIColor+random.m in Sources */,
 				1187E84F1DF66EBF00F6FE0B /* ViewController.m in Sources */,
+				1195F96C1DF7F37500449700 /* ZCCollectionViewCircleLayout.m in Sources */,
 				1196C52F1DF6C08800A20531 /* leftViewController.m in Sources */,
+				1195F9721DF7F56000449700 /* ZCCollectionCircleViewController.m in Sources */,
 				1187E84C1DF66EBF00F6FE0B /* AppDelegate.m in Sources */,
+				1195F96F1DF7F46C00449700 /* ZCCollectionViewCircleCell.m in Sources */,
 				1196C5261DF69BD400A20531 /* ZCCollectionViewFlowLayout_Waterfall.m in Sources */,
 				1196C5231DF69ABB00A20531 /* ZCCollectionViewFlowLayout_Hover.m in Sources */,
 				1187E8491DF66EBF00F6FE0B /* main.m in Sources */,

@@ -10,6 +10,7 @@
 #import "ZCCollectionViewFlowLayout_Hover.h"
 #import "ZCCollectionViewCell.h"
 #import "ZCCollectionSectionHeaderView.h"
+#import "UIColor+random.h"
 
 @interface leftViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic, strong) UICollectionView *collectionView;
@@ -68,13 +69,7 @@
     (ZCCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ZCCollectionViewCell"
                                                                       forIndexPath:indexPath];
     
-    NSInteger index = indexPath.item;
-    if (index % 2 == 0) {
-        cellView.backgroundColor = [UIColor yellowColor];
-    }
-    else {
-        cellView.backgroundColor = [UIColor greenColor];
-    }
+    cellView.backgroundColor = [UIColor random];
     
     return cellView;
 }

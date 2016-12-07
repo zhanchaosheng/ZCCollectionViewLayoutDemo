@@ -7,8 +7,12 @@
 //
 
 #import "rightViewController.h"
+#import "ZCCollectionViewCell.h"
+#import "UIColor+random.h"
+#import "ZCCollectionViewFlowLayout_Waterfall.h"
 
-@interface rightViewController ()
+@interface rightViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@property(nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -18,6 +22,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"瀑布流";
+    
+    ZCCollectionViewFlowLayout_Waterfall *viewLayout = [[ZCCollectionViewFlowLayout_Waterfall alloc] init];
+    viewLayout.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds
+                                             collectionViewLayout:viewLayout];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.collectionView registerClass:[ZCCollectionViewCell class]
+            forCellWithReuseIdentifier:@"ZCCollectionViewCell"];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.collectionView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,14 +40,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 30;
 }
-*/
+
+- (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZCCollectionViewCell *cellView =
+    (ZCCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"ZCCollectionViewCell"
+                                                                      forIndexPath:indexPath];
+
+    cellView.backgroundColor = [UIColor random];
+    
+    return cellView;
+}
+
+- (NSNumber *)heightForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 50 + arc4random_uniform(101);
+    return @(height);
+}
+
+#pragma mark - UICollectionViewDelegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return;
+}
+
+-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
 
 @end

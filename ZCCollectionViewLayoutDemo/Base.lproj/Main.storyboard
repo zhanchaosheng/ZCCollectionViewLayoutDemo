@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,11 +45,18 @@
                                 <segue destination="aI3-3h-Gc2" kind="show" id="u8E-eu-DzA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="瀑布流" id="VWH-Dg-myP">
-                            <connections>
-                                <segue destination="RdA-8w-ZGh" kind="show" id="hCA-Mo-BUt"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="瀑布流" id="VWH-Dg-myP">
+                                <connections>
+                                    <segue destination="RdA-8w-ZGh" kind="show" id="hCA-Mo-BUt"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="oHF-ZH-0Vj">
+                                <connections>
+                                    <action selector="CircleItemBtnClicked:" destination="BYZ-38-t0r" id="6t9-Cb-pdl"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
